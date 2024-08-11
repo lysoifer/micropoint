@@ -183,7 +183,7 @@
 #' plot(bigleafp$Tc ~ tme, type = "l", cex.axis = 2, cex.lab = 2,
 #'      xlab = "", ylab = "", ylim = c(-5, 40), col = rgb(0, 0.5, 0, 0.5))
 RunBigLeaf<-function(climdata,  vegp, groundp, lat, long, zref = 2, uref = zref, soilm = NA, surfwet = NA, dTmx = 25,
-                     maxiter = 20) {
+                     maxiter = 20, yearG) {
   # Create date data.frame of obstime
   tme<-as.POSIXlt(climdata$obs_time,tz="UTC")
   obstime<-data.frame(year=tme$year+1900,month=tme$mon+1,day=tme$mday,hour=tme$hour+tme$min/60+tme$sec/3600)
